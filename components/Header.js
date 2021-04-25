@@ -18,7 +18,7 @@ function Header() {
   };
   return (
     <header className="sticky top-0 bg-white">
-      <div className="flex w-full p-6">
+      <div className="flex w-full p-6 items-center">
         <Image
           height={40}
           width={120}
@@ -26,11 +26,12 @@ function Header() {
           onClick={() => router.push("/")}
           src="https://www.google.co.uk/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
         />
-        <form className="flex flex-grow border border-gray-200 rounded-full shadow-lg max-w-3xl items-center px-6 py-3 mr-5">
+        <form className="flex flex-grow border border-gray-200 rounded-full shadow-lg max-w-3xl items-center px-6 py-3 mr-5 ml-8">
           <input
             ref={searchInputRef}
             className="flex-grow w-full focus:outline-none"
             type="text"
+            defaultValue={router.query.term}
           />
           <XIcon
             onClick={() => (searchInputRef.current.value = "")}
