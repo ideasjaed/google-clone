@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Avatar from "../components/avatar";
+import Avatar from "../components/Avatar";
 import { MicrophoneIcon, ViewGridIcon } from "@heroicons/react/solid";
 import { SearchIcon } from "@heroicons/react/outline";
 import Image from "next/image";
@@ -9,8 +9,9 @@ import { useRouter } from "next/router";
 export default function Home() {
   const router = useRouter();
   const searchInputRef = useRef(null);
+
   const search = (e) => {
-    e.prventDefault();
+    e.preventDefault();
     const term = searchInputRef.current.value;
 
     if (!term) return;
@@ -62,6 +63,7 @@ export default function Home() {
           />
           <MicrophoneIcon className="h-5" />
         </div>
+
         <div className="flex flex-col w-1/2 space-y-2 justify-center mt-8 sm:space-y-0 sm:flex-row sm:space-x-4">
           <button onClick={search} className="btn">
             Buscar con Google
